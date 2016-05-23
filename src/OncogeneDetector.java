@@ -13,8 +13,8 @@ public class OncogeneDetector {
 			sequence2 += s;
 		}
 		for (int i = 0; i < sequence1.length(); i++) {
-			if (sequence.charAt(0) == sequence1.charAt(i)) {
-				if (i > sequence2.charAt(sequence1.length() - 3)) {
+			if (i < sequence1.length() - sequence.length() + 1) {
+				if (sequence.charAt(0) == sequence1.charAt(i)) {
 					if (sequence.charAt(1) == sequence1.charAt(i + 1)) {
 						if (sequence.charAt(2) == sequence1.charAt(i + 2)) {
 							howMany++;
@@ -24,8 +24,8 @@ public class OncogeneDetector {
 			}
 		}
 		for (int i = 0; i < sequence2.length(); i++) {
-			if (sequence.charAt(0) == sequence2.charAt(i)) {
-				if (i > sequence2.charAt(sequence2.length() - 3)) {
+			if (i < sequence2.length() - sequence.length() + 1) {
+				if (sequence.charAt(0) == sequence2.charAt(i)) {
 					if (sequence.charAt(1) == sequence2.charAt(i + 1)) {
 						if (sequence.charAt(2) == sequence2.charAt(i + 2)) {
 							howMany2++;

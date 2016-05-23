@@ -3,16 +3,12 @@
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
 
 import org.junit.Test;
 
-public class OncogeneTest
-{
+public class OncogeneTest {
 	@Test
-	public void testOncogeneDetector()
-	{
+	public void testOncogeneDetector() {
 		OncogeneDetector oncogeneDetector = new OncogeneDetector();
 
 		ArrayList<String> healthySequences = new ArrayList<String>();
@@ -25,6 +21,7 @@ public class OncogeneTest
 
 		assertTrue(oncogeneDetector.isOncogene(healthySequences, cancerSequences, "TGC"));
 		assertFalse(oncogeneDetector.isOncogene(healthySequences, cancerSequences, "GGG"));
+		assertTrue(oncogeneDetector.isOncogene(healthySequences, cancerSequences, "AAA"));
+		assertFalse(oncogeneDetector.isOncogene(healthySequences, cancerSequences, "TTG"));
 	}
-
 }
